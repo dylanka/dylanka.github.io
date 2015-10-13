@@ -3,7 +3,7 @@ body {
 	 font-size: 18px;
 	 line-height: 1.25em;
 	 text-align: center;
-	 width: 30em;
+	 width: 35%;
 	 background: url("images/background.jpg") no-repeat center center fixed;
 	 -webkit-background-size: cover;
 	 -moz-background-size: cover;
@@ -33,7 +33,8 @@ div {
 }
 
 #navbar ul li { 
-	display: inline; 
+	display: inline-block;
+	margin: .5em 0;
 }
 
 #navbar ul li a {
@@ -73,6 +74,21 @@ section {
 
 @media only screen and (max-width: 480px) {
 	body {
+		font-size: 12px;
+		margin: 0;
+		width: 52%;
+	}
 
+	div {
+		padding: 1em;
+	}
+
+	#logo {
+		padding: 1em;
+	}
+
+	#navbar ul li {
+		margin: .5em;
+		display: inline-block;
 	}
 }
