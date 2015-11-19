@@ -1,0 +1,115 @@
+body {
+	 font-family: Helvetica, Verdana, sans-serif;
+	 font-size: 18px;
+	 line-height: 1.25em;
+	 text-align: center;
+	 width: 40%;
+	 background-color: #f88d1a; 
+	 background: url("images/background.jpg") no-repeat fixed center center;
+	 -webkit-background-size: cover;
+	 -moz-background-size: cover;
+	 -o-background-size: cover;
+	 background-size: cover;
+	 margin: 0 60% 0 0;
+}
+
+#logo {
+	padding: 1em;
+}
+
+div {
+	list-style-type: none;
+	padding: 2em;
+	background: white;
+}
+
+#image img {
+	max-width: 100%;
+	max-height: 100%;
+	display: block;
+}
+
+#navbar ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
+	font-family: Helvetica, Verdana, sans-serif;
+	font-weight: bold;
+	text-align: center;
+}
+
+#navbar ul li { 
+	display: inline-block;
+	margin: .5em 0;
+}
+
+#navbar ul li a {
+	text-decoration: none;
+	padding: .5em 1em;
+	color: #000;
+}
+
+#navbar ul li a:hover {
+	background-color: #FFF;
+}
+
+h1{
+	color: #777;
+	font-family: Helvetica, Verdana, sans-serif;
+	text-align: center;
+	line-height: 1.25em;
+}
+
+ul {
+	list-style-position: 1em;
+}
+
+a {
+	text-decoration: none;
+	color: #FFF;
+}
+
+section {
+	text-align: left;
+	color: #000;
+}
+
+.sidebar-box {
+	max-height: 10em;
+	position: relative;
+	overflow: hidden;
+}
+
+.sidebar-box .read-more {
+	color: #000;
+	position: absolute; 
+	bottom: 0; 
+	left: 0;
+	width: 100%; 
+	text-align: center; 
+	margin: 0; 
+	padding: 1.5em 0; 
+	background: linear-gradient(to bottom, transparent, #000);
+}
+
+@media only screen and (max-width: 810px) {
+	body {
+		font-size: 12px;
+		margin: 0;
+		width: 52%;
+	}
+
+	div {
+		padding: 1em;
+	}
+
+	#logo {
+		padding: 1em;
+	}
+
+	#navbar ul li {
+		margin: .5em;
+		display: inline-block;
+	}
+}
