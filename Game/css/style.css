@@ -65,8 +65,8 @@ h1 {
 }
 
 #gameFrame {
-     height: 600px;
-     width: 800px;
+     height: 480px;
+     width: 600px;
      border: solid 1px #DDD;
      margin: 0 auto;     
 }
