@@ -12,6 +12,7 @@
 <body>
 	<h1>Game Title</h1>
 	<div id="gameFrame">
+
 		<script type="text/javascript">
 
 		var game = new Phaser.Game(600, 480, Phaser.AUTO, 'gameFrame', { preload: preload, create: create, update: update });
@@ -20,16 +21,11 @@
 
 		    game.load.image('sky', 'assets/sky.png');
 
-		//         for (var i = 1; i <= 11; i++)
-		//     {
-		//         game.load.image('bullet' + i, 'assets/bullet' + i + '.png');
-		//     }
-
 		}
 
 		function create() {
 
-			// game.background = game.add.tileSprite(0, 0, this.game.width, this.game.height, 'sky');
+			// game.background = game.add.tileSprite(0, 0, game.width, game.height, 'sky');
 
 			game.physics.startSystem(Phaser.Physics.ARCADE);
 
