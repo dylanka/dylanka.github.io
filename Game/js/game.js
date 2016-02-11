@@ -1,5 +1,29 @@
 var game = new Phaser.Game(600, 480, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
+function preload() {
+
+    game.load.image('sky', 'assets/sky.png');
+    game.load.image('ground', 'assets/ground.png');
+    game.load.image('ship', 'assets/ship.png', 32, 48);
+
+        for (var i = 1; i <= 11; i++)
+    {
+        game.load.image('bullet' + i, 'assets/bullet' + i + '.png');
+    }
+
+}
+
+function create() {
+}
+
+function update() {
+
+    game.physics.startSystem(Phaser.Physics.ARCADE);
+
+    game.add.sprite(0, 0, 'sky');
+
+
+}
 
     var Bullet = function (game, key) {
 
@@ -87,22 +111,3 @@ var game = new Phaser.Game(600, 480, Phaser.AUTO, '', { preload: preload, create
 
     };
 
-function preload() {
-
-    game.load.image('sky', 'assets/sky.png');
-    game.load.image('ground', 'assets/platform.png');
-    game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
-
-}
-
-function create() {
-}
-
-function update() {
-
-    game.physics.startSystem(Phaser.Physics.ARCADE);
-
-    game.add.sprite(0, 0, 'sky');
-
-
-}
