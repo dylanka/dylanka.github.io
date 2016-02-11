@@ -17,6 +17,8 @@
 
 		var game = new Phaser.Game(600, 480, Phaser.AUTO, 'gameFrame');
 
+		PhaserGame.prototype = {
+
 		function preload() {
 
 		    game.load.image('sky', 'assets/sky.png');
@@ -153,6 +155,7 @@
 		//         this.nextFire = this.game.time.time + this.fireRate;
 
 		    // };
+		}
 
 		</script>
 	</div>
