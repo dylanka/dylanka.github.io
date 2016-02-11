@@ -30,11 +30,11 @@
 
 		function create() {
 
-			// game.background = this.add.tileSprite(0, 0, this.game.width, this.game.height, 'sky');
-
-			game.add.sprite(0, 0, 'sky');
+			// game.background = game.add.tileSprite(0, 0, this.game.width, this.game.height, 'sky');
 
 			game.physics.startSystem(Phaser.Physics.ARCADE);
+
+			game.add.sprite(0, 0, 'sky');
 
 		 //    scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 
