@@ -19,13 +19,13 @@
 
 		PhaserGame.prototype = {
 
-		function preload() {
+		preload:function() {
 
 		    game.load.image('sky', 'assets/sky.png');
 
 		}
 
-		function create() {
+		create:function() {
 
 			// game.background = game.add.tileSprite(0, 0, game.width, game.height, 'sky');
 
@@ -41,7 +41,7 @@
 
 		}
 
-		// function update() {
+		update:function() {
 
 		// 	this.player.body.velocity.set(0);
 
@@ -155,6 +155,8 @@
 		//         this.nextFire = this.game.time.time + this.fireRate;
 
 		    // };
+		}
+
 		}
 
 		</script>
