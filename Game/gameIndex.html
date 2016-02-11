@@ -26,7 +26,7 @@
 		//         game.load.image('bullet' + i, 'assets/bullet' + i + '.png');
 		//     }
 
-		// }
+		}
 
 		function create() {
 
@@ -34,13 +34,13 @@
 
 			game.add.sprite(0, 0, 'sky');
 
-			game.physics.startSystem(Phaser.Physics.ARCADE);
+			// game.physics.startSystem(Phaser.Physics.ARCADE);
 
-		    scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+		 //    scoreText = game.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 
-            cursors = game.input.keyboard.createCursorKeys();
+   //          cursors = game.input.keyboard.createCursorKeys();
 
-            game.input.keyboard.addKeyCapture([ Phaser.Keyboard.SPACEBAR ]);
+   //          game.input.keyboard.addKeyCapture([ Phaser.Keyboard.SPACEBAR ]);
 
 		}
 
