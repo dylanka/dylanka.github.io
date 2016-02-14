@@ -37,35 +37,35 @@
 		    //  A simple background for our game
             this.background = this.game.add.sprite(0, -100, game.width, game.height, 'background');
 
-            this.weapons.push(new Weapon.SingleBullet(this.game));
+            // this.weapons.push(new Weapon.SingleBullet(this.game));
 
-            this.currentWeapon = 0;
+            // this.currentWeapon = 0;
 
-            for (var i = 1; i < this.weapons.length; i++)
-            {
-                this.weapons[i].visible = false;
-            }
+            // for (var i = 1; i < this.weapons.length; i++)
+            // {
+            //     this.weapons[i].visible = false;
+            // }
 
-            this.player = this.add.sprite(64, 200, 'ship');
+            // this.player = this.add.sprite(64, 200, 'ship');
 
-            this.physics.arcade.enable(this.player);
+            // this.physics.arcade.enable(this.player);
 
-            this.player.body.collideWorldBounds = true;
+            // this.player.body.collideWorldBounds = true;
 
 		}
 
 		function update() {
 
-			moveBackground.(this.background);
-			var moveBackground = function(background) {
-				if(background.y > 100) {
-					background.y = -100;
-					background.y += 1
-				}
+			// moveBackground.(this.background);
+			// var moveBackground = function(background) {
+			// 	if(background.y > 100) {
+			// 		background.y = -100;
+			// 		background.y += 1
+			// 	}
 
-				else {}
-					background.y +=1;
-			}}
+			// 	else {}
+			// 		background.y +=1;
+			// }}
 
 		}
 
