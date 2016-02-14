@@ -35,7 +35,7 @@
 		    game.physics.startSystem(Phaser.Physics.ARCADE);
 
 		    //  A simple background for our game
-            this.background = this.game.add.sprite(0, -100, 'background');
+            this.background = this.game.add.sprite(0, -100, game.width, game.height, 'background');
 
             this.weapons.push(new Weapon.SingleBullet(this.game));
 
