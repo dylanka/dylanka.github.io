@@ -31,6 +31,7 @@
 
 		    //  A simple background for our game
 		    game.add.sprite(0, 0, 'sky');
+            game.background.autoScroll(-40, 0);
 
 		    //  We will enable physics for any object that is created in this group
 		    platforms.enableBody = true;
@@ -44,6 +45,31 @@
 		}
 
 		function update() {
+
+			this.player.body.velocity.set(0);
+
+            if (this.cursors.left.isDown)
+            {
+                this.player.body.velocity.x = -this.speed;
+            }
+            else if (this.cursors.right.isDown)
+            {
+                this.player.body.velocity.x = this.speed;
+            }
+
+            if (this.cursors.up.isDown)
+            {
+                this.player.body.velocity.y = -this.speed;
+            }
+            else if (this.cursors.down.isDown)
+            {
+                this.player.body.velocity.y = this.speed;
+            }
+
+            if (this.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR))
+            {
+                this.weapons[this.currentWeapon].fire(this.player);
+            }
 
 		}
 
