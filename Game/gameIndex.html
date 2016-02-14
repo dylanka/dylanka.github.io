@@ -35,7 +35,7 @@
 		    game.physics.startSystem(Phaser.Physics.ARCADE);
 
 		    //  A simple background for our game
-            this.background = this.add.tileSprite(0, 0, this.game.width, this.game.height, 'background');
+            this.background = this.game.add.sprite(0, -100, 'background');
 
             this.weapons.push(new Weapon.SingleBullet(this.game));
 
@@ -55,6 +55,17 @@
 		}
 
 		function update() {
+
+			moveBackground.(this.background);
+			var moveBackground = function(background) {
+				if(background.y > 100) {
+					background.y = -100;
+					background.y += 1
+				}
+
+				else {}
+					background.y +=1;
+			}}
 
 			this.player.body.velocity.set(0);
 
