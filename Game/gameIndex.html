@@ -20,7 +20,12 @@
 		function preload() {
 
 		    game.load.image('sky', 'assets/sky.png');
-		    game.load.image('ship', 'assets/ship.png', 32, 48);
+		    game.load.image('ship', 'assets/ship.png');
+
+		    for (var i = 1; i <= 11; i++)
+            {
+                this.load.image('bullet' + i, 'assets/bullet' + i + '.png');
+            }
 
 		}
 
@@ -30,17 +35,23 @@
 		    game.physics.startSystem(Phaser.Physics.ARCADE);
 
 		    //  A simple background for our game
-		    game.add.sprite(0, 0, 'sky');
-            game.background.autoScroll(-40, 0);
+            this.background = this.add.tileSprite(0, 0, this.game.width, this.game.height, 'background');
+            this.background.autoScroll(-40, 0);
 
-		    //  We will enable physics for any object that is created in this group
-		    platforms.enableBody = true;
+            this.weapons.push(new Weapon.SingleBullet(this.game));
 
-		    // The player and its settings
-		    player = game.add.sprite(32, game.world.height - 150, 'ship');
+            this.currentWeapon = 0;
 
-		    //  We need to enable physics on the player
-		    game.physics.arcade.enable(player);
+            for (var i = 1; i < this.weapons.length; i++)
+            {
+                this.weapons[i].visible = false;
+            }
+
+            this.player = this.add.sprite(64, 200, 'ship');
+
+            this.physics.arcade.enable(this.player);
+
+            this.player.body.collideWorldBounds = true;
 
 		}
 
