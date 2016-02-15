@@ -23,6 +23,10 @@
     		game.load.image('player', 'assets/ship.png');
     	}
 
+    	var player;
+		var score = 0;
+		var scoreText;
+
     	function create() {
 
     		game.physics.startSystem(Phaser.Physics.ARCADE);
