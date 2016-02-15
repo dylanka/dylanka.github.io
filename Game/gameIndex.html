@@ -55,28 +55,42 @@
             //     this.weapons[i].visible = false;
             // }
 
-            // this.player = this.add.sprite(64, 200, 'ship');
+            game.player = game.add.sprite(64, 200, 'ship');
 
-            // this.physics.arcade.enable(this.player);
+            game.physics.arcade.enable(this.player);
 
-            // this.player.body.collideWorldBounds = true;
-
-		}
-
-		function update() {
-
-			moveBackground.(this.background);
-			var moveBackground = function(background) {
-				if(background.y > 100) {
-					background.y = -100;
-					background.y += 1
-				}
-
-				else {}
-					background.y +=1;
-			}}
+            game.player.body.collideWorldBounds = true;
 
 		}
+
+		update: function () {
+
+            this.player.body.velocity.set(0);
+
+            if (this.cursors.left.isDown)
+            {
+                this.player.body.velocity.x = -this.speed;
+            }
+            else if (this.cursors.right.isDown)
+            {
+                this.player.body.velocity.x = this.speed;
+            }
+
+            if (this.cursors.up.isDown)
+            {
+                this.player.body.velocity.y = -this.speed;
+            }
+            else if (this.cursors.down.isDown)
+            {
+                this.player.body.velocity.y = this.speed;
+            }
+
+            if (this.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR))
+            {
+                this.weapons[this.currentWeapon].fire(this.player);
+            }
+
+        }
 
 		</script>
 	</div>
