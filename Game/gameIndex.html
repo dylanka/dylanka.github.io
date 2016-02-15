@@ -36,6 +36,27 @@
 
         function update() {
 
+        	this.player.body.velocity.set(0);
+
+            if (this.cursors.left.isDown)
+            {
+                this.player.body.velocity.x = -this.speed;
+            }
+            else if (this.cursors.right.isDown)
+            {
+                this.player.body.velocity.x = this.speed;
+            }
+
+            if (this.cursors.up.isDown)
+            {
+                this.player.body.velocity.y = -this.speed;
+            }
+            else if (this.cursors.down.isDown)
+            {
+                this.player.body.velocity.y = this.speed;
+            }
+
+
         }
 
 		</script>
