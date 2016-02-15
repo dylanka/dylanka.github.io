@@ -15,17 +15,14 @@
 
 		<script type="text/javascript">
 
-    var game = new Phaser.Game(800, 600, Phaser.AUTO, '');
+		var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
     	function preload() {
 
     		game.load.image('background', 'assets/background.png');
     		game.load.image('player', 'assets/ship.png');
-    	}
 
-    	var player;
-		var score = 0;
-		var scoreText;
+    	}
 
     	function create() {
 
