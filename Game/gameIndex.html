@@ -17,6 +17,8 @@
 
 		var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
+		var background;
+
     	function preload() {
 
     		game.load.image('background', 'assets/background.png');
@@ -30,7 +32,7 @@
 
 		    game.add.sprite(0, 0, 'background');
 
-		    var background = game.add.tileSprite(0, 0, 600, 600, 'background');
+		    background = game.add.tileSprite(0, 0, game.stage.bounds.width, game.cache.getImage('background').height, 'background');
 
 	        player = game.add.sprite(100, game.world.height - 300, 'player');
 
