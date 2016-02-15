@@ -17,6 +17,14 @@
 
 		var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
+		function init() {
+
+            this.game.renderer.renderSession.roundPixels = true;
+
+            this.physics.startSystem(Phaser.Physics.ARCADE);
+
+        }
+
 		function preload() {
 
 		    game.load.image('background', 'assets/background.png');
