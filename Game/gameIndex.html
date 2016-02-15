@@ -19,6 +19,7 @@
 
 		var background;
 		var player;
+		var cursors;
 
     	function preload() {
 
@@ -29,21 +30,28 @@
 
     	function create() {
 
-    		game.physics.startSystem(Phaser.Physics.ARCADE);
-
 		    game.add.sprite(0, 0, 'background');
 
 		    background = game.add.tileSprite(0, 0, 800, 800, 'background');
 
 	        player = game.add.sprite(100, game.world.height - 300, 'player');
 
-	        game.physics.arcade.enable(player);
+	        game.physics.enable(player, Phaser.Physics.ARCADE);
+
+	        cursors = game.input.keyboard.createCursorKeys();
 
     	}
 
         function update() {
 
 	        background.tilePosition.x -= 1;
+
+        	if(cursors.left.isDown){
+        		player.body.velocity.x = -100;
+        	}
+        	if(cursors.right.isDown){
+        		player.body.velocity.x = 100;
+        	}
 
         }
 
