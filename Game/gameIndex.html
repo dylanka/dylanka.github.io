@@ -24,6 +24,18 @@
 
     	}
 
+    	var PhaserGame = function () {
+
+	        game.background = null;
+
+	        game.player = null;
+	        game.cursors = null;
+	        game.speed = 300;
+
+	        game.weapon = [];
+
+    	};
+
     	function create() {
 
     		game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -36,24 +48,24 @@
 
         function update() {
 
-        	this.player.body.velocity.set(0);
+        	game.player.body.velocity.set(0);
 
-            if (this.cursors.left.isDown)
+            if (game.cursors.left.isDown)
             {
-                this.player.body.velocity.x = -this.speed;
+                game.player.body.velocity.x = -game.speed;
             }
-            else if (this.cursors.right.isDown)
+            else if (game.cursors.right.isDown)
             {
-                this.player.body.velocity.x = this.speed;
+                game.player.body.velocity.x = game.speed;
             }
 
-            if (this.cursors.up.isDown)
+            if (game.cursors.up.isDown)
             {
-                this.player.body.velocity.y = -this.speed;
+                game.player.body.velocity.y = -game.speed;
             }
             else if (this.cursors.down.isDown)
             {
-                this.player.body.velocity.y = this.speed;
+                game.player.body.velocity.y = game.speed;
             }
 
 
