@@ -20,7 +20,7 @@
 		var background;
 		var player;
 		var cursors;
-        var bullet;
+        var bullets;
         var bulletTime = 0;
         var fire;
 
@@ -44,16 +44,16 @@
 
 	        cursors = game.input.keyboard.createCursorKeys();
 
-            bullet = game.add.group();
-            bullet.enableBody = true;
-            bullet.physicsBodyType = Phaser.Physics.ARCADE;
-            bullet.createMultiple(30, 'bullet');
-            bullet.setAll('anchor.x', 1);
-            bullet.setAll('anchor.y', 0.5);
-            bullet.setAll('outOfBoundsKill', true);
-            bullet.setAll('checkWorldBounds', true);
+            bullets = game.add.group();
+            bullets.enableBody = true;
+            bullets.physicsBodyType = Phaser.Physics.ARCADE;
+            bullets.createMultiple(30, 'bullet');
+            bullets.setAll('anchor.x', 1);
+            bullets.setAll('anchor.y', 0.5);
+            bullets.setAll('outOfBoundsKill', true);
+            bullets.setAll('checkWorldBounds', true);
 
-            fire = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+            fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
     	}
 
@@ -78,10 +78,20 @@
         		player.body.velocity.y = 180;
         	}
 
-            if(fire.isDown){
+            if(fireButton.isDown){
                 fireBullet();
             }
 
+        }
+
+        function fireBullet(){
+            if(game.time.now > bulletTime)
+                bullet = bullets.getFirstExists(false);
+                    if(bullet){
+                        bullet.reset(player.x,player.y);
+                        bullet.body.velocity.x = -400;
+                        bulletTime = game.time.now + 200;
+                    }
         }
 
         game.state.add('mainState',mainState);
