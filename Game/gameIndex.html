@@ -88,7 +88,7 @@
             if(game.time.now > bulletTime)
                 bullet = bullets.getFirstExists(false);
                     if(bullet){
-                        bullet.reset(player.x + 15,player.y + 10);
+                        bullet.reset(player.x + 25,player.y + 10);
                         bullet.body.velocity.x = 400;
                         bulletTime = game.time.now + 200;
                     }
