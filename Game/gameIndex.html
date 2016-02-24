@@ -64,6 +64,12 @@
 
             createEnemies();
 
+            var tween = game.add.tween(enemy).to((x:200),200,Phaser.Easing.Linear.None,true,0,1000,false);
+
+            tween.onLoop.add(attack,this);
+
+            .start();
+
     	}
 
         function update() {
@@ -113,10 +119,6 @@
 
             enemies.y = 100;
             enemies.x = 50;
-
-            var tween = game.add.tween(enemy).to((x:-200),200,Phaser.Easing.Linear.None,true,0,1000,false);
-
-            tween.onLoop.add(attack,this);
 
         }
 
