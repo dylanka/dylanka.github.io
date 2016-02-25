@@ -79,7 +79,7 @@
             enemies.y = 100;
             enemies.x = 650;
 
-            var tween = game.add.tween(enemy).to({x:-150}, 2000, Phaser.Easing.Linear.None, true, 0, 1000, true);
+            var tween = game.add.tween(enemies).to({x:-150}, 2000, Phaser.Easing.Linear.None, true, 0, 1000, true);
 
             tween.onLoop.add(attack,this);
 
