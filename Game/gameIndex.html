@@ -137,9 +137,9 @@
             if(game.time.now > bulletTime)
                 bullet = bullets.getFirstExists(false);
                     if(bullet){
-                        bullet.reset(player.x + 5,player.y + 5);
+                        bullet.reset(player.x + 25,player.y + 10);
                         bullet.body.velocity.x = 500;
-                        bulletTime = game.time.now + 200;
+                        bulletTime = game.time.now + 10;
                     }
         }
 
@@ -151,7 +151,7 @@
         // }
 
         function render(){
-            
+
         }
 
         game.state.add('mainState',mainState);
