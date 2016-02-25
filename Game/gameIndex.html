@@ -51,6 +51,8 @@
 
 	        game.physics.enable(player, Phaser.Physics.ARCADE);
 
+            game.physics.arcade.overlap(bullets,enemies,collisionHandler,null,this);            
+
 	        cursors = game.input.keyboard.createCursorKeys();
 
             bullets = game.add.group();
@@ -98,8 +100,6 @@
     	}
 
         function update() {
-
-            game.physics.arcade.overlap(bullets,enemies,collisionHandler,null,this);
 
         	player.body.velocity.x = 0;
 
