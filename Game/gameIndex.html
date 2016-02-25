@@ -51,7 +51,7 @@
 
 	        game.physics.enable(player, Phaser.Physics.ARCADE);
 
-            game.physics.ARCADE.overlap(bullets,enemies,collisionHandler,null,this);
+            game.physics.ARCADE.overlap(bullet,enemy,collisionHandler,null,this);
 
 	        cursors = game.input.keyboard.createCursorKeys();
 
