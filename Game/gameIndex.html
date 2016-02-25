@@ -81,7 +81,7 @@
 
             var tween = game.add.tween(enemy).to({x:-1000 }, 2000, 'Linear', true, 0);
 
-            // tween.onLoop.add(attack,this);
+            tween.onLoop.add(attack,this);
 
             // .start();            
 
