@@ -58,7 +58,7 @@
             bullets = game.add.group();
             bullets.enableBody = true;
             bullets.physicsBodyType = Phaser.Physics.ARCADE;
-            bullets.createMultiple(30, 'bullet');
+            bullets.createMultiple(10000, 'bullet');
             bullets.setAll('anchor.x', 1);
             bullets.setAll('anchor.y', 0.5);
             bullets.setAll('outOfBoundsKill', true);
@@ -140,7 +140,7 @@
                         // controls bullet firing place
                         bullet.reset(player.x + 25,player.y + 10);
                         bullet.body.velocity.x = 500;
-                        bulletTime = game.time.now + 10;
+                        bulletTime = game.time.now + 40;
                     }
         }
 
