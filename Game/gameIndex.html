@@ -26,6 +26,10 @@
 
         var enemies;
 
+        var score = 0;
+        var scoreText;
+        var winText;
+
     	function preload() {
 
     		game.load.image('background', 'assets/background.png');
@@ -134,10 +138,10 @@
             enemies.x += 8;
         }
 
-        function collisionHandler(bullet,enemy){
-            bullet.kill();
-            enemy.kill();
-        }
+        // function collisionHandler(bullet,enemy){
+        //     bullet.kill();
+        //     enemy.kill();
+        // }
 
 
         game.state.add('mainState',mainState);
