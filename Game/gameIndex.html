@@ -99,7 +99,7 @@
 
         function update() {
 
-            game.physics.ARCADE.overlap(bullet,enemy,collisionHandler,null,this);   
+            game.physics.arcade.overlap(bullets, enemies, collisionHandler, null, this);   
 
         	player.body.velocity.x = 0;
 
