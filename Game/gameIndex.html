@@ -70,30 +70,30 @@
 
             createEnemies();
 
-        function createEnemies(){
-            for(var x = 0; x < 2; x++){
-                for(var y = 0; y < 5; y++){
-                    var enemy = enemies.create(x*70,y*75,'enemy');
-                    enemy.anchor.setTo(0.5,0.5);
+            function createEnemies(){
+                for(var x = 0; x < 2; x++){
+                    for(var y = 0; y < 5; y++){
+                        var enemy = enemies.create(x*70,y*75,'enemy');
+                        enemy.anchor.setTo(0.5,0.5);
+                    }
                 }
+
+                enemies.y = 100;
+                enemies.x = 900;
+
+                var tween = game.add.tween(enemies).to({x:-150}, 5000, Phaser.Easing.Linear.None, true, 50, 100, false);
+
+                tween.onLoop.add(attack,this);
+
             }
 
-            enemies.y = 100;
-            enemies.x = 900;
+            function attack(){
+                enemies.x += 8;
+            }            
 
-            var tween = game.add.tween(enemies).to({x:-150}, 5000, Phaser.Easing.Linear.None, true, 50, 100, false);
-
-            tween.onLoop.add(attack,this);
-
-        }
-
-        function attack(){
-            enemies.x += 8;
-        }            
-
-            scoreText = game.add.text(0,550,'Score:'(font: '32px Arial',fill: #fff));
-            winText = game.add.text(game.world.centerX,game.world.centerY,'You Win!'(font: '32px Arial',fill: #fff));
-            winText.visible = false;
+            // scoreText = game.add.text(0,550,'Score:'(font: '32px Arial',fill: #fff));
+            // winText = game.add.text(game.world.centerX,game.world.centerY,'You Win!'(font: '32px Arial',fill: #fff));
+            // winText.visible = false;
 
     	}
 
@@ -121,7 +121,7 @@
             if(fireButton.isDown){
                 fireBullet();
             }
-            
+
             game.physics.arcade.overlap(bullets,enemies,collisionHandler,null,this);            
 
             scoreText.text = 'Score' + score;
@@ -149,10 +149,6 @@
             bullet.kill();
             enemy.kill();
             score += 100;
-        }
-
-        function render(){
-
         }
 
         game.state.add('mainState',mainState);
