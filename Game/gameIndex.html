@@ -137,6 +137,7 @@
             if(game.time.now > bulletTime)
                 bullet = bullets.getFirstExists(false);
                     if(bullet){
+                        // controls bullet firing place
                         bullet.reset(player.x + 25,player.y + 10);
                         bullet.body.velocity.x = 500;
                         bulletTime = game.time.now + 10;
