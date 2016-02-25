@@ -91,9 +91,9 @@
             enemies.x += 8;
         }            
 
-            // scoreText = game.add.text(0,550,'Score:'(font: '32px Arial',fill: #fff));
-            // winText = game.add.text(game.world.centerX,game.world.centerY,'You Win!'(font: '32px Arial',fill: #fff));
-            // winText.visible = false;
+            scoreText = game.add.text(0,550,'Score:'(font: '32px Arial',fill: #fff));
+            winText = game.add.text(game.world.centerX,game.world.centerY,'You Win!'(font: '32px Arial',fill: #fff));
+            winText.visible = false;
 
     	}
 
@@ -124,12 +124,12 @@
             
             game.physics.arcade.overlap(bullets,enemies,collisionHandler,null,this);            
 
-            // scoreText.text = 'Score' + score;
+            scoreText.text = 'Score' + score;
 
-            // if(score == 1200){
-            //     winText.visible = true;
-            //     scoreText.visible = false;
-            // }
+            if(score == 1200){
+                winText.visible = true;
+                scoreText.visible = false;
+            }
 
         }
 
