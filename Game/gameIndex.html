@@ -71,7 +71,7 @@
             createEnemies();
 
             function createEnemies(){
-                for(var x = 0; x < 2; x++){
+                for(var x = 0; x < 4; x++){
                     for(var y = 0; y < 5; y++){
                         var enemy = enemies.create(x*70,y*75,'enemy');
                         enemy.anchor.setTo(0.5,0.5);
@@ -122,6 +122,8 @@
                 fireBullet();
             }
 
+            game.physics.arcade.overlap(player,enemies,collisionHandler,null,this);            
+
             game.physics.arcade.overlap(bullets,enemies,collisionHandler,null,this);            
 
             // scoreText.text = 'Score' + score;
@@ -145,8 +147,9 @@
         }
 
 
-        function collisionHandler(bullet,enemy){
+        function collisionHandler(bullet,enemy,player){
             bullet.kill();
+            player.kill();
             enemy.kill();
             score += 100;
         }
