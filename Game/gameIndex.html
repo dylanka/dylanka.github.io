@@ -122,9 +122,7 @@
                 fireBullet();
             }
 
-            game.physics.arcade.overlap(player,enemies,collisionHandler,null,this);            
-
-            game.physics.arcade.overlap(bullets,enemies,collisionHandler,null,this);            
+            game.physics.arcade.overlap(player,bullets,enemies,collisionHandler,null,this);            
 
             // scoreText.text = 'Score' + score;
 
