@@ -123,6 +123,7 @@
             }
 
             game.physics.arcade.overlap(bullets,enemies,collisionHandler,null,this);            
+            game.physics.arcade.overlap(enemies,player,enemyHitsPlayer, null, this);
 
             // scoreText.text = 'Score' + score;
 
@@ -145,11 +146,17 @@
         }
 
 
-        function collisionHandler(bullet,enemy,player){
+        function collisionHandler(bullet,enemy){
             bullet.kill();
             enemy.kill();
             score += 100;
         }
+
+        function enemyHitsPlayer (player,enemy){
+            player.kill();
+            enemy.kill();
+        }
+
 
         game.state.add('mainState',mainState);
         game.state.start('mainState');
