@@ -51,6 +51,8 @@
 
 	        game.physics.enable(player, Phaser.Physics.ARCADE);
 
+            player.body.collideWorldBounds=true;
+
 	        cursors = game.input.keyboard.createCursorKeys();
 
             bullets = game.add.group();
