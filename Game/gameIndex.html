@@ -107,7 +107,7 @@
                 enemies.x += 8;
             }            
 
-            // scoreText = game.add.text(10, 10, 'Score: ',{font: '32px Arial',fill: #fff});
+            scoreText = game.add.text(10, 10, 'Score: ',{font: '32px Arial',fill: #fff});
             // winText = game.add.text(game.world.centerX,game.world.centerY,'You Win!'{font: '32px Arial',fill: #fff});
             // winText.visible = false;
 
@@ -171,7 +171,7 @@
         function collisionHandler(bullet,enemy){
             bullet.kill();
             enemy.kill();
-            // score += 100;
+            score += 100;
             // enemy explodes
             var explosion = explosions.getFirstExists(false);
             explosion.reset(enemy.body.x, enemy.body.y);
