@@ -66,8 +66,6 @@
 
             fireButton = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
-            pauseButton = game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
-
             enemies = game.add.group();
             enemies.enableBody = true;
             enemies.physicsBodyType = Phaser.Physics.ARCADE;
@@ -128,10 +126,6 @@
 
             if(fireButton.isDown){
                 fireBullet();
-            }
-
-            if(pauseButton.isDown){
-                game.pause = true;
             }
 
             // bullet to enemy physics
