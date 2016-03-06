@@ -110,7 +110,9 @@
 
             scoreString = 'Score : ';
             scoreText = game.add.text(10, 10, 'Score: 0',{fontsize: '32px', fill: '#fff'});
+            
             winText = game.add.text(game.world.centerX,game.world.centerY,'You Win!'{fontsize: '32px', fill: '#fff'});
+            winText.anchor.setTo(0.5, 0.5);
             winText.visible = false;
 
     	}
