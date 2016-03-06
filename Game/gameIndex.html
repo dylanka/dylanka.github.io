@@ -146,8 +146,6 @@
             // player to enemy physics
             game.physics.arcade.overlap(enemies,player,enemyHitsPlayer,null,this);
 
-            // scoreText.text = 'Score' + score;
-
             // if(score == 1000){
             //     winText.visible = true;
             //     scoreText.visible = false;
@@ -172,6 +170,8 @@
             bullet.kill();
             enemy.kill();
             score += 100;
+            scoreText.text = 'Score' + score;
+
             // enemy explodes
             var explosion = explosions.getFirstExists(false);
             explosion.reset(enemy.body.x, enemy.body.y);
