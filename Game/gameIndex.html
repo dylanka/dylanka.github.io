@@ -25,6 +25,7 @@
         var bullets;
         var bulletTime = 0;
         var fire;
+        var explosion;
 
         var enemies;
 
@@ -38,6 +39,7 @@
     		game.load.image('player', 'assets/ship.png');
             game.load.image('bullet', 'assets/bullet.png');
             game.load.image('enemy', 'assets/enemy.png');
+            game.load.spritesheet('explosion', 'assets/explode.png');
 
     	}
 
@@ -70,6 +72,11 @@
             enemies.enableBody = true;
             enemies.physicsBodyType = Phaser.Physics.ARCADE;
 
+            // explosions
+            explosions = game.add.group();
+            explosions.createMultiple(20, 'explode');
+            explosions.forEach(setupEnemies, this);
+
             createEnemies();
 
             function createEnemies(){
@@ -88,6 +95,12 @@
 
                 tween.onLoop.add(attack,this);
 
+            }
+
+            function setupEnemies(enemy){
+                enemy.anchor.x = 0.5;
+                enemy.anchor.y = 0.5;
+                enemy.animations.add('explode');
             }
 
             function attack(){
@@ -158,13 +171,21 @@
         function collisionHandler(bullet,enemy){
             bullet.kill();
             enemy.kill();
-            score += 100;
+            // score += 100;
+            // enemy explodes
+            var explosion = explosions.getFirstExists(false);
+            explosion.reset(enemy.body.x, enemy.body.y);
+            explosion.play('explode', 20, false, true);
         }
 
         // player enemy collision
         function enemyHitsPlayer (player,enemy){
             player.kill();
             enemy.kill();
+            // player explodes
+            var explosion = explosions.getFirstExists(false);
+            explosion.reset(player.body.x, player.body.y);
+            explosion.play('explode', 20, false, true);            
         }
 
 
