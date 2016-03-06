@@ -74,7 +74,7 @@
 
             // explosions
             explosions = game.add.group();
-            explosions.createMultiple(20, 'explode');
+            explosions.createMultiple(20, 'explosion');
             explosions.forEach(setupEnemies, this);
 
             createEnemies();
@@ -100,7 +100,7 @@
             function setupEnemies(enemy){
                 enemy.anchor.x = 0.5;
                 enemy.anchor.y = 0.5;
-                enemy.animations.add('explode');
+                enemy.animations.add('explosion');
             }
 
             function attack(){
@@ -175,7 +175,7 @@
             // enemy explodes
             var explosion = explosions.getFirstExists(false);
             explosion.reset(enemy.body.x, enemy.body.y);
-            explosion.play('explode', 20, false, true);
+            explosion.play('explosion', 20, false, true);
         }
 
         // player enemy collision
@@ -185,7 +185,7 @@
             // player explodes
             var explosion = explosions.getFirstExists(false);
             explosion.reset(player.body.x, player.body.y);
-            explosion.play('explode', 20, false, true);            
+            explosion.play('explosion', 20, false, true);            
         }
 
 
