@@ -15,7 +15,7 @@
         var score = 0;
         var scoreString = '';
         var scoreText;
-        var winText;
+        // var winText;
 
         function preload() {
 
@@ -133,9 +133,9 @@
             // player to enemy physics
             game.physics.arcade.overlap(enemies,player,enemyHitsPlayer,null,this);
 
-            if(score == 2000){
-                winText.visible = true;
-                scoreText.visible = false;
+            // if(score == 2000){
+            //     winText.visible = true;
+            //     scoreText.visible = false;
             }
 
         }
