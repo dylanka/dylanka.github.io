@@ -91,6 +91,7 @@
                 enemies.x += 8;
             }            
 
+            // score
             scoreString = 'Score : ';
             scoreText = game.add.text(10, 10, 'Score: 0',{fontsize: '32px', fill: '#fff'});
             
@@ -133,9 +134,8 @@
             // player to enemy physics
             game.physics.arcade.overlap(enemies,player,enemyHitsPlayer,null,this);
 
-            // if(score == 2000){
-            //     winText.visible = true;
-            //     scoreText.visible = false;
+            if(score == 2000){
+                scoreText.visible = true;
             }
 
         }
